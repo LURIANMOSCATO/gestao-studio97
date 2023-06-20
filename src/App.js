@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import './App.css';
+import Sidebar from './components/Sidebar';
+import Home from './Home';
+import Agenda from './Agenda';
+import Login from './Login';
+
+const SidebarLayout = () => (
+  <>
+    <Sidebar />
+    <Outlet />
+  </>
+);
 
 function App() {
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element= {<SidebarLayout/>}>
+          <Route path="/" element= {<Home/>} />
+          <Route path="/agenda" element={<Agenda/>} />
+        </Route>
+        <Route path="/login" element= {<Login/>} />
+      </Routes>
+    
+  </BrowserRouter>
   );
 }
 
