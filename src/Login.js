@@ -22,10 +22,10 @@ export default function Login() {
         user: '',
         password: ''
     })
-
     const navigate = useNavigate()
 
     axios.defaults.withCredentials = true;
+
     function handleSubmit(e) {
         e.preventDefault();
         axios.post('http://localhost:8080/login', values)
@@ -40,13 +40,13 @@ export default function Login() {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Login</h1>
             <button 
-                onClick={openModal} 
-                className={styles.button_open}>
-                    <CiLock/>
-                </button>
+            onClick={openModal} 
+            className={styles.button_open}>
+                <CiLock/>
+            </button>
 
                 <Modal
                 isOpen={ModalIsOpen}

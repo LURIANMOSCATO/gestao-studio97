@@ -7,7 +7,7 @@ import {RxScissors} from 'react-icons/rx'
 import {HiHandThumbUp} from 'react-icons/hi2'
 
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
@@ -79,8 +79,8 @@ const Home = () => {
         axios.get('http://localhost:8080/logout')
         .then(res => {
             if(res.data.Message === "Success") {
-                window.location.reload(true);
-                navigate('/login')
+                window.location.reload(false);
+                navigate('/login');
             } else {
                 console.log("Error");
             }
