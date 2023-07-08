@@ -1,0 +1,191 @@
+form .user_details{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+form label .user_details .input_field{
+    margin-bottom: 15px;
+    margin: 10px auto 10px;
+    width: calc(100% / 2- 20px);
+}
+
+label{
+    margin: 15px;
+    left: 0;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+form input{
+    margin:10px;
+    display: flex;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.input_field input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+}
+
+.input_field:focus{
+    outline: none;
+}
+
+.form_list{
+    height: 90%;
+}
+
+.box {
+    border-radius: 2px;
+    height: 3rem;
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid rgba(236, 139, 28, 0.897);
+}
+
+form input{
+    margin:10px;
+    display: flex;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.input_field input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+}
+
+.input_field{
+    border: none;
+    border-top: 2px solid transparent;
+    border-radius: 2px;
+    height: 50px;
+    width: 90%;
+    margin: 10px;
+    left: 0;
+    background: none;
+}
+
+.inputf input{
+    padding: 0px 20px;
+}
+
+
+form .user_details{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+form label .user_details .input_field{
+    margin-bottom: 15px;
+    margin: 10px auto 10px;
+    width: calc(100% / 2- 20px);
+}
+
+label{
+    margin: 15px;
+    left: 0;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+form .button{
+    height: 50px;
+    margin: 20px 0;
+}
+
+form .button button{
+    font-size:20px;
+    font-weight: 500;
+    font-family:'Poppins';
+    border-radius: 6px;
+    margin-right: 60px;
+    align-items: center;
+    justify-content:center;
+}
+
+
+.button_action {
+    display: block;
+    height: 3rem;
+    width: 80%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    align-items: center;
+    border-radius: 6px;
+    border: none;
+    background: rgb(218, 122, 32);
+    color: #fff;
+    cursor: pointer;
+}
+
+form .button button:hover{
+    letter-spacing: 1px;
+    transition: all ease-in .2s;
+}
+
+.header_title{
+    font-size: 2rem;
+    margin-left: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #e77517;
+    box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.1);
+}
+
+form select option {
+    font-size: 20px;
+    border: none;
+    box-shadow: 10px 11px 15px -5px rgba(0,0,0,0.1);
+}
+
+form select option:hover{
+    background: red;
+}
+
+.button_open {
+    margin-left: 100px;
+}
+
+.container_view{
+    width: 65vh;
+    box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.2);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    margin: 50px auto;
+    border-radius: 1rem;
+}
+
+.button_view{
+    display: flex;
+    margin: 5px auto;
+    margin-top: 10px;
+    height: 10vh;
+    box-shadow: 0px -6px 15px 0px rgba(0,0,0,0.1);
+    align-items:center;
+}
+
+.button_view .button_action{
+    width: 30vh;
+    height: 6vh;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.button_view .button_action:nth-child(1){
+    background: rgba(255, 0, 0, 0.8);
+}

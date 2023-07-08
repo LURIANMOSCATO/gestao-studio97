@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from './Home.module.css'
-
-import {BsCalendar3, BsSunFill, BsWalletFill} from 'react-icons/bs'
+import {BsCalendar3,BsCash, BsSunFill, BsWalletFill} from 'react-icons/bs'
 import {GiRazor, GiComb} from 'react-icons/gi'
+import {BiLogOut} from 'react-icons/bi'
 import {RxScissors} from 'react-icons/rx'
 import {HiHandThumbUp} from 'react-icons/hi2'
 
@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
 
-    const [data, setData] = useState([]);
+    /*const [data, setData] = useState([]);
     const [ clients, setClients] = useState([]);
     const [ clientsday, setClientsday] = useState([]);
     const [ clientsgui, setClientsgui] = useState([]);
@@ -20,10 +20,8 @@ const Home = () => {
     const [ clientsjontotal, setClientsjontotal] = useState([]);
     const [ clientsguitotal, setClientsguitotal] = useState([]);
     
-
     const navigate = useNavigate();
 
-    
     axios.defaults.withCredentials = true;
     useEffect(() =>{
         axios.get('http://localhost:8081/balance/')
@@ -63,8 +61,8 @@ const Home = () => {
 
     }, [])
 
-    useEffect(() =>{
-        axios.get('http://localhost:8080/')
+    /*useEffect(() =>{
+        axios.get('')
         .then(res =>{
             if(res.data.Status === "Success") {
                 navigate('/');
@@ -73,154 +71,42 @@ const Home = () => {
             }
         })
 
-    }, [])
-
-    const handleLogout = () => {
-        axios.get('http://localhost:8080/logout')
-        .then(res => {
-            if(res.data.Message === "Success") {
-                window.location.reload(false);
-                navigate('/login');
-            } else {
-                console.log("Error");
-            }
-        }).catch(err => console.log(err))
+    }, [])*/
+    const navigate = useNavigate();
+    function logoutSubmit(){
+        localStorage.setItem("login", false);
+        localStorage.setItem("loginStatus", "Deslogado!");
+        navigate("/login");
     }
 
     return (
         <div className={styles.container}>
-        
-            
-            
-            <div className={styles.content}>
-                <div className={styles.card}>
+                <button className={styles.out} onClick={logoutSubmit}><BiLogOut/> Sair</button>
 
-                    <div className={styles.count}>
+                <div className={styles.content}>
 
-                        <div className={styles.header_title}>
-                            <h1 className={styles.content_title}>Carteira</h1>
-                        </div>
-                        <BsWalletFill/>
+                    <div className={styles.card}>
 
-                        <div className={styles.content_value}>
-                            <span> R$ {data}</span>
-                            <p>Balanço Total</p>
+                        <div className={styles.box}>
+                            <h1 className={styles.title}>Título</h1>
+                            <BsCash/>
 
-                            <div className={styles.btn}>
-                                <button className={styles.btn_report}>Dia</button>
-                                <button className={styles.btn_report}>Semana</button>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div className={styles.count}>
-
-                        <div className={styles.header_title}>
-                            <h1 className={styles.content_title}>Hoje</h1>
-                        </div>
-                        <BsSunFill/>
-
-                        <div className={styles.content_value}>
-                        <span> {clientsday} </span>
-                        </div>
-
-                        
-                    </div>
-
-                    <div className={styles.count}>
-
-                        <div className={styles.header_title}>
-                            <h1 className={styles.content_title}>Total de Agendas</h1>
-                        </div>
-                        <BsCalendar3/>
-
-
-                        <div className={styles.content_value}>
-                        <span> {clients} </span>
-                        </div>
-
-                        <div className={styles.details}>
-
-                            <div className={styles.service_content}>
-                            <h1 className={styles.service_detail}>Cabelo</h1>
-                            <span>4</span>
-                            </div>
-
-                            <div className={styles.service_content}>
-                            <h1 className={styles.service_detail}>Barba</h1>
-                            <span>4</span>
-                            </div>
-
-
-                            <div className={styles.service_content}>
-                            <h1 className={styles.service_detail}>Completo</h1>
-                            <span>4</span>
-                            </div>
+                            <div className={styles.value}>
                             
+                            <span>R$100</span>
+                            </div>
 
+                            
                         </div>
 
+                        <div className={styles.box}>Total</div>
+                        <div className={styles.box}>Total</div>
+
                     </div>
+
+                    <div className={styles.card}>card2</div>
 
                 </div>
-
-                <div className={styles.card}>
-
-                <div className={styles.dashboard_counter}>
-
-                <div className={styles.dashboard_count}>
-
-                        <div className={styles.header_title}>
-                            <h1 className={styles.content_title}>Guilherme</h1>
-                        </div>
-                        <GiRazor/>
-
-                        <div className={styles.content_value}>
-                        <span>{clientsguitotal}</span>
-                        <p>Total Hoje ({clientsgui})</p>
-                        </div>
-
-                    </div>
-                    <div className={styles.dashboard_count}>
-                        <div className={styles.header_title}>
-                            <h1 className={styles.content_title}>Jonatan</h1>
-                        </div>
-                        <RxScissors/>
-                        <div className={styles.content_value}>
-                        <span> {clientsjontotal}</span>
-                        <p>Total Hoje ({clientsjon})</p>
-                        </div>
-                    </div>
-                    <div className={styles.dashboard_count}>
-                        <div className={styles.header_title}>
-                            <h1 className={styles.content_title}>Davi</h1>
-                        </div>
-                        <GiComb/>
-                        <div className={styles.content_value}>
-                        <span> 55</span>
-                        <p>Total Hoje (2)</p>
-                        </div>
-                    </div>
-                    <div className={styles.dashboard_count}>
-                        <div className={styles.header_title}>
-                            <h1 className={styles.content_title}>Ajudante</h1>
-                        </div>
-                        <HiHandThumbUp/>
-                        <div className={styles.content_value}>
-                        <span> 55</span>
-                        <p>Total Hoje (2)</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                    
-                </div>
-
-            </div>
-            <button onClick={handleLogout}>Sair</button>    
         </div>
     );
 };

@@ -22,13 +22,16 @@ function Create(){
 
     //const navigate = useNavigate();
     const handleSubmit = (e) =>{
+
         e.preventDefault();
-        axios.post('http://localhost:8081/register', values)
+
+        axios.post('http://localhost:81/api/crud.php', values)
         .then(res => {
             if(res.status===200) {
+            console.log(res);
             toast.success('Cliente Agendado!', {
                 position: "top-center",
-                autoClose: 2000,
+                autoClose: 1000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,

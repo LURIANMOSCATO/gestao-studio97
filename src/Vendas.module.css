@@ -1,0 +1,195 @@
+.container{
+    display: grid;
+    margin: 0 auto;
+    width: 160vh;
+    height: 100%;
+    border-radius: 1rem;
+  }
+
+  .cards{
+    margin-top: 5px;
+    height: 30vh;
+    width: 150vh;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.2);
+    border: #ffffffd0;
+  }
+
+  .values {
+    box-shadow: 3px 7px 20px -5px rgba(0,0,0,0.3);
+    height: 80%;
+    width: 80%;
+    margin: auto 10px;
+    border-radius: 6px;
+    border-left: 1vh solid rgba(13, 88, 6, 0.7);
+    background: #fffafa;
+  }
+
+  .values:nth-child(2){
+    border-left: 1vh solid rgba(255, 145, 0, 0.897);
+  }
+
+  .values:nth-child(3){
+    border-left: 1vh solid rgba(0, 183, 255, 0.897);
+  }
+
+  .content {
+    display: grid;
+    margin-top:1px;
+  }
+
+  .title{
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(84, 87, 87);
+    float: left;
+    margin: 10px;
+    text-transform: capitalize;
+  }
+
+  .content svg {
+    float: right;
+    margin-right: 15px;
+    top: 10%;
+    font-size: 30px;
+    color: rgb(236, 175, 6);
+    height: 6vh;
+    width: 6vh;
+  }
+
+  .values_money{
+    color: rgb(33, 36, 36);
+    font-size: 6vh;
+    font-weight: 500;
+  }
+
+  .form{
+    margin-top: 10px;
+    display: flex;
+    width: 150vh;
+    box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+  }
+
+  .box {
+    display: grid;
+    margin: 1px auto;
+  }
+
+  .box label {
+    margin: auto 10px;
+    margin-top: 5px;
+    margin-bottom: 1px;
+  }
+
+  .box select, input {
+    border-radius: 6px;
+    background: #d7d5d583;
+    border: 1px solid #00000041;
+    height: 5vh;
+    width: 30vh;
+  }
+
+  .box select option {
+    background: rgb(241, 154, 96);
+    font-size: 20px;
+  }
+  select:focus{
+    outline: none;
+  }
+
+  input:focus{
+    background: rgb(255, 254, 254);
+    outline: none;
+  }
+  .box button{
+    height: 35px;
+    width: 20vh;
+    margin:auto 5px;
+    margin-top: 20px;
+    border-radius: 1.4vh;
+    border: none;
+    background: rgba(221, 123, 10, 0.8);
+    color: aliceblue;
+    font-weight: 600;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box button svg {
+    font-size: 15px;
+  }
+
+  .box button:hover{
+    cursor: pointer;
+    font-size: 15px;
+    background: rgba(221, 123, 10, 0.979);
+    box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.1);
+  }
+
+  .box svg {
+    font-size: 1.5rem;
+  }
+
+  .table{
+    margin-top: 10px;
+    display: flex;
+    width: 150vh;
+    box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(219, 218, 218, 0.3);
+  }
+
+  .container_table{
+    height: 45vh;
+    overflow-y: scroll;
+  }
+
+  table thead tr th{
+    width: 150vh;
+    font-size: 15px;
+    white-space: nowrap;
+    border-collapse: collapse;
+    border-radius: 2px;
+    color: rgb(255, 94, 0);
+  }
+
+  .container_table thead  th {
+    position: sticky;
+    top: 0;
+    background: #eebf7a;
+    
+  }
+
+  .container_table thead {
+    border-bottom: 2px solid rgb(12, 11, 11);
+    box-shadow: 0px 10px 20px -3px rgba(0,0,0,0.2);
+  }
+
+  tbody td{
+    text-align:center;
+    white-space: nowrap;
+    border-collapse: collapse;
+  }
+
+  .container_table tbody tr:hover{
+    box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  tbody td .tbvalue{
+    background: rgba(28, 104, 9, 0.658);
+    width: 50%;
+    height: 25px;
+    border-radius:5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(241, 236, 234);
+    align-items: center;
+  }

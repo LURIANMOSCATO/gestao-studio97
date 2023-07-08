@@ -28,14 +28,14 @@ main {
 }
 
 .sidebar {
-  background: #8a8787;
-  color: #e0d7d7;
+  background: #fff;
+  color: #2a2929;
   height: 100vh;
   width: 200px;
+  z-index: 1;
   position: fixed;
   transition: all 0.5s;
-  box-shadow: 7px 0px 51px -34px rgba(0,0,0,0.2);
-  border-right: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.2);
 }
 
 .top_section {
@@ -46,8 +46,7 @@ main {
 
 .logo {
   font-size: 35px;
-  color: #fff;
-
+  color: #ec7c1a;
 }
 
 .bars{
@@ -58,26 +57,42 @@ main {
   color: #000;
 }
 
+.bars svg:hover{
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.1);
+  height: 30px;
+  color: #252323;
+}
+
 .link {
   display: flex;
-  color: aliceblue;
+  color: rgb(24, 24, 23);
   padding: 5px 15px;
   gap: 10px;
-  transition: all 0.5s;
+  font-weight: 300;
 }
 
 .link:hover{
-  background:rgb(253, 252, 250);
+  box-shadow: 0px 0px 4px 3px rgba(0,0,0,0.1);
+  border-radius: 5px;
   color: #000;
-  transition: all 0.5s;
 }
 
 .active {
-  background: rgb(232, 235, 230);
-  color: #000;
+  box-shadow: 0px 0px 10px 4px rgba(18, 17, 17, 0.1);
+  color: #171616;
+  border-left: 5px solid rgb(235, 145, 9);
+  margin-top: 5px;
+  font-weight: 200;
+  border-radius: 0.2rem;
+  margin: 2px;
+}
+
+.active svg {
+  color: rgb(235, 145, 9);
 }
 
 .icon, .link_text {
-  font-size: 25px;
+  font-size: 20px;
   text-transform: capitalize;
 }

@@ -41,41 +41,51 @@ body {
     bottom: 8%;
     right: 5%;
     text-align:center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     text-transform: uppercase;
     outline: none;
     color: white;
     background: rgb(235, 119, 24);
+    cursor: pointer;
 }
 
 .button_open:hover{
-    font-size: 25px;
-    cursor: pointer;
-    transition: all ease-in .1s;
+    background: rgba(223, 155, 10, 0.877);
 }
 
 .table_content {
-    height: 100vh;
-    max-width: 900vh;
-    margin: 50px auto;
+    height: 80vh;
+    max-width: 100%;
+    margin: 20px auto;
     text-align: center;
     white-space: nowrap;
     border-collapse: collapse;
     box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow-y: scroll;
 }
 
 .table_content thead tr, th{
-    font-size: 15px;
+    font-size: 12px;
     letter-spacing: 1px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
-    color: #fff;
+    color: rgb(235, 119, 24);
     align-items: center;
     padding: 2px 10px;
+}
+.table_content thead {
+    box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(241, 230, 230, 0.781);
+}
+
+.table_content thead th {
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    background: #e9e6e6;
 }
 
 .table_container{
@@ -87,20 +97,41 @@ body {
 tbody td{
     font-size: 15px;
     width: 50px;
+    height: 5vh;
     font-weight: 400;
     text-transform: capitalize;
     margin: 0 auto;
 }
 
 .table_content tbody tr:hover{
-    font-size: 1rem;
     background: #79757542;
 }
-
 .action_buttons{
     display: flex;
     margin: 5px;
     justify-content: space-around;
+}
+
+.act_buttons{
+    display: flex;
+    color: rgb(219, 105, 23);
+    font-size: 3vh;
+    border-radius: 6px;
+    height: 2rem;
+    align-items: center;
+    margin: 5px;
+}
+
+.act_buttons:hover{
+    font-size: 3.5vh;
+    cursor: pointer;
+}
+
+
+.act_buttons svg {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: #fff;
 }
 
 .link_buttons{
@@ -161,20 +192,23 @@ tbody td{
 
 
 .search_box{
-    background: #ffffff;
-    max-width: 900vh;
+    background: none;
+    border: 1px solid gray;
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.1);
+    width: 160vh;
     border-radius: 0.7rem;
     height: 2.5rem;
-    padding: 0 15px;
     display: flex;
     align-items: center;
     margin: 0 auto;
+    margin-top: 2vh;
+    margin-bottom: 0;
 }
 
 .search_box input{
     background-color: transparent;
     border: none;
-    height: 100%;
+    height: 80%;
     width: 50%;
     font-size: 1.1rem;
     font-family: 'Poppins';
@@ -187,4 +221,5 @@ tbody td{
 
 .search_box svg {
     color: #ee8206;
+    margin: 10px;
 }

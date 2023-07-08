@@ -1,0 +1,81 @@
+.container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    background: url('./components/bg.jpg');
+}
+.form {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 0.6rem;
+    padding: 30px;
+    box-shadow: 0px 0px 28px -3px rgba(0,0,0,0.2);
+    background: rgba(250, 250, 250, 0.950);
+}
+
+.form label {
+    margin: 10px;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+input[type=text], input[type=password]{
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    width: 300px;
+    border-radius: 6px;
+    padding: 1rem;
+    border: none;
+    background: none;
+}
+
+input[type=text], input[type=password]:focus {
+    outline: none;
+}
+
+.button{
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    width: 320px;
+    height: 50px;
+    border: 1px solid rgb(212, 152, 22);
+    background: rgb(212, 152, 22);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: #1f1d1d;
+    cursor: pointer;
+    font-weight: 500;
+    align-items: center;
+    justify-content:center
+}
+
+.button:hover{
+    background: rgb(212, 152, 22);
+    transition: all ease .2s;
+    border: none;
+    color: white;
+}
+
+p {
+    color: green;
+}
+
+.error{
+    color: red;
+}
+
+.box {
+    height: 3rem;
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid rgba(236, 139, 28, 0.897);
+}
+
+.box svg {
+    color: chocolate;
+    font-size: 20px;
+}

@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, {useState, useEffect} from 'react'
+import axios from 'axios';
 import Create from "./Form";
 
-import Modal from 'react-modal';
 import styles from './Agenda.module.css'
-
-
-import {GoSearch} from 'react-icons/go'
-import {FaUserCheck} from 'react-icons/fa'
-import {GrClose} from 'react-icons/gr'
 import {BsFillPersonPlusFill} from 'react-icons/bs'
-import {AiFillEye} from 'react-icons/ai'
-import { Link } from "react-router-dom";
+import {GrClose} from 'react-icons/gr'
+import {HiOutlineSearch} from 'react-icons/hi'
+import {BsEyeFill, BsPersonFillCheck} from 'react-icons/bs'
 
+import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 Modal.setAppElement("#root");
 
-function Home(){
+export default function Agenda() {
 
     const [ModalIsOpen, setIsOpen] = useState(false);
 
@@ -26,65 +23,37 @@ function Home(){
     function closeModal() {
         setIsOpen(false);
     }
+    
 
-    const [search, setSearch] = useState("");
     const [data, setData] = useState([]);
 
-    useEffect(()=>{
-        axios.get('http://localhost:8081/')
-        .then(res => setData(res.data))
-        .catch(err => console.log(err));
-    }, [])
+    useEffect(() => {
+        axios.get('http://localhost:81/api/crud.php')
+          .then(res => setData(res.data))
+          .catch(err => console.log(err));
+      }, []);
 
-/*   const handleDelete = (id) => {
-        axios.delete('http://localhost:8081/delete/'+id)
-        .then(res => {
-            window.location.reload();
-        })
-        .catch(err => console.log(err))
-    }*/ 
-
-    const handleCheck = (id) => {
-        axios.post('http://localhost:8081/check/'+id)
-        .then(res => {
-            if(res.status===200)
-        {
-            console.log("tudo certo");      
-        }
-        })
-        .catch(err => console.log(err));
-
-        axios.delete('http://localhost:8081/delete/'+id)
-        .then(res => {
-            window.location.reload();
-        })
-        .catch(err => console.log(err))
-    }
-
-    return (
+  return (
+    <div className={styles.container}>
         
         
-        <div className={styles.container}>
-            
                 <button 
-                onClick={openModal} 
+                onClick={openModal}
                 className={styles.button_open}>
-                <BsFillPersonPlusFill/>
+                <BsFillPersonPlusFill />
                 </button>
-            
-            <div className={styles.table_content}>
-                
 
             <div className={styles.search_box}>
-            <GoSearch id="search-icon"/>
-            <input type="search" placeholder="Buscar"
-            onChange={(e)=>setSearch(e.target.value)} />
+            <HiOutlineSearch id="search-icon"/>
+            <input type="search" placeholder="Buscar" />
             
             </div>
 
+                <div className={styles.table_content}>
+                    
                 <table className={styles.table_container}>
-                    <thead className={styles.thead}>
-                    <tr>
+                    <thead>
+                        <tr>
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Telefone</th>
@@ -95,68 +64,52 @@ function Home(){
                         <th>tempo</th>
                         <th>valor</th>
                         <th>Ações</th>
-                    </tr>
+                        </tr>
                     </thead>
+
                     <tbody>
-                        {data.filter((client) =>{
-                            if(search===""){
-                                return client
-                            }
-                            else if(client.nomeCliente.toLowerCase().includes(search.toLocaleLowerCase())){
-                                return client
-                            }
-                            else if (client.datas.toLocaleLowerCase().includes(search.toLocaleLowerCase())){
-                                return client
-                            }
-                        }).map((client, index) => {
-                            return <tr key={index}>
-                                <td>{client.idCliente}</td>
-                                <td>{client.nomeCliente}</td>
-                                <td>{client.telefoneCliente}</td>
-                                <td>{client.barbeiro}</td>
-                                <td>{client.servicoCliente}</td>
-                                <td>{client.datas}</td>
-                                <td>{client.hora}</td>
-                                <td>{client.tempo} Min</td>
-                                <td> R$ {client.valor}</td>
-                                <td>
-                                    <div className={styles.action_buttons}>
-                                    <Link to={`/view/${client.idCliente}`}>
+                    {data.map(item => (
+                        <tr key={item.idCliente}>
+                            <td>{item.idCliente}</td>
+                            <td>{item.nomeCliente}</td>
+                            <td>{item.telefoneCliente}</td>
+                            <td>{item.barbeiro}</td>
+                            <td>{item.servicoCliente}</td>
+                            <td>{item.datas}</td>
+                            <td>{item.hora}</td>
+                            <td>{item.tempo}</td>
+                            <td>R$ {item.valor}</td>
+                            <td>
+                            <div className={styles.act_buttons}>
+            
+                            <Link to={`/view/${item.idCliente}`}>
+                            <BsEyeFill/>
+                            </Link>
 
-                                    <button className={styles.link_buttons}>
-                                    <AiFillEye/>
-                                    </button>
+                            <button>
+                            <BsPersonFillCheck/>
+                            </button>
+                            </div>
 
-                                    </Link>
-
-                                    
-
-                                    <button className={styles.link_buttons} onClick={ () => handleCheck(client.idCliente) }>
-                                    <FaUserCheck/>
-                                    </button>
-                                    </div>
-
-                                </td>
-                            </tr>
-                        })}
+                            </td>
+                        </tr>
+                    ))}
+                        
                     </tbody>
                 </table>
-            </div>
+                </div>
 
-                        <Modal
-                        isOpen={ModalIsOpen}
-                        onRequestClose={closeModal}
-                        contentLabel="Modal Overlay"
-                        overlayClassName={styles.modal_overlay}
-                        className={styles.modal_content}>
-                        <button onClick={closeModal} className={styles.close_btn}><GrClose/></button>
+                <Modal
+                    isOpen={ModalIsOpen}
+                    onRequestClose={closeModal}
+                    contentLabel="Modal Overlay"
+                    overlayClassName={styles.modal_overlay}
+                    className={styles.modal_content}>
+                    <button onClick={closeModal} className={styles.close_btn}><GrClose/></button>
                             
-                        <Create/>
+                    <Create/>
 
-                        </Modal>
-
-        </div>
-    )
+                </Modal>
+    </div>
+  )
 }
-
-export default Home

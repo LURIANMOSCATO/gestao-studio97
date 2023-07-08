@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import '../App.css';
 import {MdDashboard} from 'react-icons/md'
+import {BsFillCalendar2WeekFill, BsFillGearFill} from 'react-icons/bs'
 import {GiBeard} from 'react-icons/gi'
 import {RiMenu4Fill} from  'react-icons/ri'
+import {FaCashRegister} from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 
 const Sidebar = ({children}) =>  {
@@ -18,7 +20,17 @@ const Sidebar = ({children}) =>  {
         {
             path: "/agenda",
             name: "agenda",
-            icon: <MdDashboard/>
+            icon: <BsFillCalendar2WeekFill/>
+        },
+        {
+            path: "/vendas",
+            name: "Vendas",
+            icon: <FaCashRegister/>
+        },
+        {
+            path: "/config",
+            name: "cadastro",
+            icon: <BsFillGearFill/>
         }
     ]
 
