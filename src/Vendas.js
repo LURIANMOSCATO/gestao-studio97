@@ -23,21 +23,21 @@ export default function Vendas() {
     });
 
   useEffect(() => {
-    axios.get('http://localhost:81/api/store.php')
+    axios.get('http://barber97.jelastic.saveincloud.net/store.php')
     .then(res => setData(res.data))
     .catch(err => console.log(err));
 
-    axios.get('http://localhost:81/api/storeday.php/')
+    axios.get('http://barber97.jelastic.saveincloud.net/storeday.php')
     .then(res => {
 			setTotald(res.data[0].valor)
 		}).catch(err => console.log(err));
 
-    axios.get('http://localhost:81/api/storeweek.php/')
+    axios.get('http://barber97.jelastic.saveincloud.net/storeweek.php')
     .then(res => {
 			setTotalw(res.data[0].valor)
 		}).catch(err => console.log(err));
 
-    axios.get('http://localhost:81/api/storemonth.php/')
+    axios.get('http://barber97.jelastic.saveincloud.net/storemonth.php')
     .then(res => {
 			setTotalm(res.data[0].valor)
 		}).catch(err => console.log(err));
@@ -48,7 +48,7 @@ export default function Vendas() {
 
     e.preventDefault();
 
-    axios.post('http://localhost:81/api/store.php', values)
+    axios.post('http://barber97.jelastic.saveincloud.net/store.php', values)
     .then(res =>{
       if(res.status===200) {
         console.log(res);
@@ -138,7 +138,7 @@ export default function Vendas() {
             draggable
             theme="light"
     />
-      <form className={styles.form} onSubmit={handleSubmit} >
+      <form className={styles.form} onSubmit={handleSubmit}>
         
       <div className={styles.details_form}>
       <label>Usuário</label>
@@ -208,7 +208,7 @@ export default function Vendas() {
           <tbody>
             {
             data.map(item =>{
-              return <tr key={item.id}>
+            return <tr key={item.id}>
                   <td>{item.barbeiro}</td>
                   <td>{item.description}</td>
                   <td>{item.dateLaunch}</td>
@@ -216,7 +216,6 @@ export default function Vendas() {
                   <div 
                   className={styles.tbvalue}>R$ {item.valor}</div>
                   </td>
-                  
                   </tr>  
                 })}
           </tbody>

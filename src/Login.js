@@ -55,7 +55,7 @@ function Login() {
 
     function loginSubmit(){
         if(user !== "" && pass != ""){
-            var url = "http://localhost:81/api/login.php";
+            var url = "http://barber97.jelastic.saveincloud.net/login.php";
             var headers = {
                 "Accept": "application/json",
                 "Content-type": "application/json"
