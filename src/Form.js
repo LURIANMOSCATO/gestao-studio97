@@ -20,6 +20,8 @@ function Create(){
         valor: ''
     });
 
+
+
     //const navigate = useNavigate();
     const handleSubmit = (e) =>{
 
@@ -90,6 +92,7 @@ function Create(){
             <select
             className={styles.input_field}
             onChange={e => setValues({...values, barbeiro: e.target.value})}>
+                
                 <option>--</option>
                 <option>Guilherme</option>
                 <option>Jonatan</option>

@@ -51,7 +51,8 @@ body {
 }
 
 .button_open:hover{
-    background: rgba(223, 155, 10, 0.877);
+    background: rgba(223, 106, 10, 0.877);
+    border: 2px solid #ee8206
 }
 
 .table_content {
@@ -76,16 +77,11 @@ body {
     align-items: center;
     padding: 2px 10px;
 }
-.table_content thead {
-    box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.3);
-    border-bottom: 1px solid rgba(241, 230, 230, 0.781);
-}
 
 .table_content thead th {
     position: sticky;
     top: 0;
     bottom: 0;
-    background: #e9e6e6;
 }
 
 .table_container{
@@ -104,55 +100,34 @@ tbody td{
 }
 
 .table_content tbody tr:hover{
-    background: #79757542;
-}
-.action_buttons{
-    display: flex;
-    margin: 5px;
-    justify-content: space-around;
+    background: #79757525;
 }
 
 .act_buttons{
     display: flex;
     color: rgb(219, 105, 23);
     font-size: 3vh;
-    border-radius: 6px;
     height: 2rem;
     align-items: center;
     margin: 5px;
 }
 
-.act_buttons:hover{
-    font-size: 3.5vh;
-    cursor: pointer;
-}
-
-
-.act_buttons svg {
-    border: 1px solid #fff;
-    border-radius: 50%;
-    background: #fff;
-}
-
-.link_buttons{
-    border-radius: 5px;
-    height: 1.5rem;
-    width: 3rem;
+.button_links{
     border: none;
-    background: #fff;
-}
-
-.action_buttons button{
-    outline: none;
-    margin: 2px;
-    color: darkorange;
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
-}
-
-.action_buttons button:hover{
+    height: 30px;
+    width: 30px;
+    color: #ee8206;
+    font-size: 20px;
+    background: none;
     cursor: pointer;
-    font-size: 15px;
-    transition: all ease-in .1s;
+}
+
+.button_links:hover{
+    border-radius: 5px;
+    box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.1);
+    background: white;
+    font-size: 25px;
+    transition: ease-in .1s;
 }
 
 .modal_overlay{
@@ -176,7 +151,6 @@ tbody td{
     border-radius: 1rem;
     box-shadow: 0px 13px 50px 3px rgba(0,0,0,0.2);
     outline: none;
-    border: 1px solid #6b676760;
 }
 
 .close_btn{

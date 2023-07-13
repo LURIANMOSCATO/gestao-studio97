@@ -20,7 +20,7 @@ function View() {
     });
 
     useEffect(()=> {
-        axios.get('http://localhost:81/api/crud.php/'+id)
+        axios.get('http://localhost:81/api/crud.php'+id)
         .then(res => {
             console.log(res)
             setValues({...values, name: res.data[0].nomeCliente, telefone: res.data[0].telefoneCliente,

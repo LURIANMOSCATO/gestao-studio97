@@ -37,11 +37,11 @@ export default function Agenda() {
     <div className={styles.container}>
         
         
-                <button 
+            <button 
                 onClick={openModal}
                 className={styles.button_open}>
                 <BsFillPersonPlusFill />
-                </button>
+            </button>
 
             <div className={styles.search_box}>
             <HiOutlineSearch id="search-icon"/>
@@ -83,10 +83,14 @@ export default function Agenda() {
                             <div className={styles.act_buttons}>
             
                             <Link to={`/view/${item.idCliente}`}>
+
+                            <button className={styles.button_links}>
                             <BsEyeFill/>
+                            </button>
+                            
                             </Link>
 
-                            <button>
+                            <button className={styles.button_links}>
                             <BsPersonFillCheck/>
                             </button>
                             </div>

@@ -1,0 +1,158 @@
+.container {
+    width: 170vh;
+    margin-top: 30px;
+    box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.3);
+    height: 90vh;
+    border-radius: 6px;
+}
+
+.tab {
+    list-style-type: none;
+    width: 40vh;
+    margin-top: 10px;
+    margin: 0px auto;
+    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-weight:300;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.tab  .description_list{
+    color: gray;
+    font-size: 12px;
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+.tab:focus{
+    outline: none;
+}
+
+.tabList{
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 6px 10px 2px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid rgba(109, 106, 106, 0.774);
+}
+
+ .active{
+  color: #696767;
+  font-weight: 500;
+  border-bottom: 2px solid rgb(224, 152, 7);
+  margin: 5px auto;
+  letter-spacing: 1px;
+}
+
+.tabPanel{
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.content_panel{
+    align-items: center;
+    justify-content: center;
+}
+
+.content_panel .contents{
+    align-content: center;
+    align-items: center;
+}
+.contentst{
+    display: grid;
+    align-items: center;
+    text-align: left;
+    
+
+}
+.list {
+    margin: 0 auto;
+}
+
+
+.list table thead tr{
+    color: #fff;
+}
+
+.button_open{
+    border: none;
+    float: right;
+    box-shadow: 0px 1px 15px -5px rgba(0, 0, 0, 0.5);
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 8%;
+    right: 15%;
+    text-align:center;
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+    color: white;
+    background: rgb(235, 119, 24);
+    cursor: pointer;
+}
+
+.desc_list{
+    display: flex;
+}
+
+.desc_list svg {
+    margin: 5px;
+    margin-left: 10px;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 50%;
+    color: gray;
+}
+
+.desc_cont{
+    display: grid;
+}
+
+.desc_cont .description_list {
+    float: left;
+    margin-left: 1px;
+}
+
+.modal_overlay{
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in .1s;
+}
+
+.modal_content {
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 0px 13px 50px 3px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.close_btn{
+    height: 2rem;
+    width: 2rem;
+    font-size:1.5rem;
+    font-family: 'Poppins';
+    border:none;
+    background: none;
+    float: right;
+    margin-top: 0px;
+    cursor: pointer;
+}

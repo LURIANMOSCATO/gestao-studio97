@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import styles from './Vendas.module.css'
 import { ToastContainer ,toast } from "react-toastify";
-import {FaMoneyBill, FaMoneyBillAlt} from 'react-icons/fa'
+import { FaMoneyBillAlt} from 'react-icons/fa'
 import {GiCash} from 'react-icons/gi'
 import {MdRocketLaunch} from 'react-icons/md'
 import {BsFillBasket3Fill, BsCashCoin, BsCash} from 'react-icons/bs'
@@ -85,7 +85,7 @@ export default function Vendas() {
         
 
         <div className={styles.values_money}>
-          <span>R$ {totald},00</span>
+          <span>{totald}</span>
         </div>
 
         </div>
@@ -101,7 +101,7 @@ export default function Vendas() {
         
 
         <div className={styles.values_money}>
-          <span>R$ {totalw}</span>
+          <span>{totalw}</span>
         </div>
 
         </div>
@@ -117,7 +117,7 @@ export default function Vendas() {
         
 
         <div className={styles.values_money}>
-          <span>R$ {totalm}</span>
+          <span>{totalm}</span>
         </div>
 
         </div>
@@ -139,21 +139,27 @@ export default function Vendas() {
             theme="light"
     />
       <form className={styles.form} onSubmit={handleSubmit} >
-
+        
+      <div className={styles.details_form}>
+      <label>Usuário</label>
       <div className={styles.box}>
-      <label><HiUser/> Usuário</label>
+      <HiUser/>
       <select
       onChange={e => setValues({...values, barbeiro: e.target.value})}
       >
+        <option> </option>
         <option>Guilherme</option>
         <option>Davi</option>
         <option>Jonatan</option>
         <option>Ajudante</option>
       </select>
       </div>
+      </div>
       
+      <div className={styles.details_form}>
+      <label>Produto</label>
       <div className={styles.box}>
-      <label><BsFillBasket3Fill/> Produto</label>
+      <BsFillBasket3Fill/>
       <select
       onChange={e => setValues({...values, description: e.target.value})}
       >
@@ -166,18 +172,23 @@ export default function Vendas() {
         <option>Cerveja</option>
       </select>
       </div>
+      </div>
 
+      <div className={styles.details_form}>
+      <label>Valor</label>
       <div className={styles.box}>
-      <label><FaMoneyBillAlt/> Valor</label>
-      <input type='number' 
+      <FaMoneyBillAlt/> 
+      <input type='number'
+      inputMode="numeric"
+      pattern='[0-9]'
       onChange={e => setValues({...values, valor: e.target.value})}
       />
       </div>
-
-      <div className={styles.box}>
-      <button>Lançar <MdRocketLaunch/></button>
       </div>
-    
+      <div className={styles.details_form}>
+      <button className={styles.button_launch}>Lançar <MdRocketLaunch/></button>
+      </div>
+          
       </form>
     </div>
 
@@ -185,7 +196,7 @@ export default function Vendas() {
       <div className={styles.container_table}>
 
         <table>
-        <thead>
+        <thead className={styles.thead}>
           <tr>
           <th>Usuário</th>
           <th>Produto</th>
@@ -202,9 +213,8 @@ export default function Vendas() {
                   <td>{item.description}</td>
                   <td>{item.dateLaunch}</td>
                   <td>
-                  <div className={styles.tbvalue}>
-                  R$ {item.valor}
-                  </div>
+                  <div 
+                  className={styles.tbvalue}>R$ {item.valor}</div>
                   </td>
                   
                   </tr>  

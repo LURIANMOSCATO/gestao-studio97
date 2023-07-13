@@ -59,16 +59,16 @@
   }
 
   .values_money{
-    color: rgb(33, 36, 36);
+    color: rgba(33, 36, 36, 0.705);
     font-size: 6vh;
-    font-weight: 500;
+    font-weight: 600;
   }
-
   .form{
     margin-top: 10px;
     display: flex;
     width: 150vh;
     box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.2);
+    background: #fff;
     border-radius: 6px;
     align-items: center;
     justify-content: center;
@@ -76,64 +76,90 @@
   }
 
   .box {
-    display: grid;
-    margin: 1px auto;
+    display: flex;
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    height: 6vh;
+    align-items: center;
+    border-left: 5px solid rgb(233, 128, 8);
   }
 
-  .box label {
-    margin: auto 10px;
-    margin-top: 5px;
-    margin-bottom: 1px;
+  .box svg {
+    margin: 5px;
+    color: rgb(243, 135, 11);
   }
 
   .box select, input {
     border-radius: 6px;
-    background: #d7d5d583;
-    border: 1px solid #00000041;
     height: 5vh;
     width: 30vh;
+    border: none;
+    background: none;
+    margin: 5px auto;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button{
+    display: none;
   }
 
   .box select option {
-    background: rgb(241, 154, 96);
+    background: rgba(214, 212, 210, 0.623);
     font-size: 20px;
   }
   select:focus{
     outline: none;
+    background: none;
   }
 
   input:focus{
-    background: rgb(255, 254, 254);
+    background: none;
     outline: none;
+    font-weight: 600;
   }
-  .box button{
-    height: 35px;
-    width: 20vh;
+   .button_launch{
+    height: 7vh;
+    width: 25vh;
     margin:auto 5px;
-    margin-top: 20px;
-    border-radius: 1.4vh;
+    margin-top: 30px;
+    border-radius: 1vh;
     border: none;
     background: rgba(221, 123, 10, 0.8);
     color: aliceblue;
     font-weight: 600;
+    font-size: 16px;
     text-transform: uppercase;
     align-items: center;
     justify-content: center;
   }
 
-  .box button svg {
-    font-size: 15px;
+  .button_launch svg {
+    font-size: 18px;
   }
 
-  .box button:hover{
+  .button_launch:hover{
     cursor: pointer;
+    letter-spacing: 2px;
+    font-weight: 700;
     font-size: 15px;
     background: rgba(221, 123, 10, 0.979);
-    box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.1);
+    border: 1px solid rgb(218, 216, 214);
   }
 
   .box svg {
     font-size: 1.5rem;
+  }
+
+  .details_form {
+    display: grid;
+    margin-top: 10px;
+    margin: 10px;
+    align-items: center;
+  }
+
+  .details_form label {
+    margin-top: 0px;
+    margin-left: 5px;
   }
 
   .table{
@@ -157,20 +183,28 @@
     font-size: 15px;
     white-space: nowrap;
     border-collapse: collapse;
-    border-radius: 2px;
+    border-radius: 5px;
     color: rgb(255, 94, 0);
+    
+  }
+
+  table thead tr{
+    white-space: nowrap;
+    border-collapse: collapse;
+    border-bottom: 1px solid rgb(104, 103, 103);
   }
 
   .container_table thead  th {
     position: sticky;
     top: 0;
-    background: #eebf7a;
-    
+    background: rgb(241, 239, 239);
+    margin: 0px;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.2);
   }
 
-  .container_table thead {
-    border-bottom: 2px solid rgb(12, 11, 11);
-    box-shadow: 0px 10px 20px -3px rgba(0,0,0,0.2);
+  .container_table thead th{
+    border-bottom: 1px solid rgba(12, 11, 11, 0.4);
   }
 
   tbody td{
@@ -186,7 +220,7 @@
   tbody td .tbvalue{
     background: rgba(28, 104, 9, 0.658);
     width: 50%;
-    height: 25px;
+    height: 27px;
     border-radius:5px;
     font-weight: 600;
     font-size: 15px;
