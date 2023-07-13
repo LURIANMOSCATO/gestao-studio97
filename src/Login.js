@@ -151,7 +151,7 @@ function Login() {
         defaultValue="ENTRAR"
         className={styles.button}
         onClick={loginSubmit}
-        >Entrar</button>
+        >LOGIN</button>
     </div>
     
     </div>
